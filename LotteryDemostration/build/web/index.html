@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Home - Gambling Site</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- Google Font -->
+        <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
+
+        <style>
+            body {
+                margin: 0;
+                padding: 0;
+                font-family: 'Orbitron', sans-serif;
+                background-color: #121212; /* Dark theme */
+                color: #f1f1f1;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+            }
+
+            .container {
+                text-align: center;
+                background: linear-gradient(145deg, #1e1e1e, #2a2a2a);
+                padding: 40px;
+                border-radius: 20px;
+                box-shadow: 0 0 15px rgba(255, 215, 0, 0.2);
+                width: 90%;
+                max-width: 600px;
+            }
+
+            h1 {
+                font-size: 3rem;
+                color: #ffd700; /* Gold color */
+                margin-bottom: 10px;
+            }
+
+            p {
+                font-size: 1.2rem;
+                color: #cccccc;
+                margin-bottom: 30px;
+            }
+
+            .highlight {
+                color: #00ff99; /* Neon green */
+            }
+
+            form input[type="submit"] {
+                background-color: #ffd700;
+                color: #121212;
+                font-size: 1.1rem;
+                font-weight: bold;
+                padding: 10px 25px;
+                border: none;
+                border-radius: 8px;
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+            }
+
+            form input[type="submit"]:hover {
+                background-color: #e6c200;
+            }
+
+            footer {
+                margin-top: 40px;
+                text-align: center;
+                color: #888;
+                font-size: 0.9rem;
+                max-width: 600px;
+                padding: 0 20px;
+            }
+
+            @media (max-width: 600px) {
+                h1 {
+                    font-size: 2.2rem;
+                }
+
+                p {
+                    font-size: 1rem;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Welcome to <span class="highlight">Lucky Spin</span></h1>
+            <p>Try your luck and win big!</p>
+
+            <form action="login.jsp" method="GET">
+                <input type="submit" value="GET STARTED">
+            </form>
+        </div>
+
+        <footer>
+            <p>
+                <strong>Disclaimer:</strong> This is a demonstration website for educational or simulation purposes only. 
+                It is not affiliated with, endorsed by, or intended to replicate any official lottery or gambling platform, including Lottery SA. 
+                No real money is involved.
+            </p>
+        </footer>
+    </body>
+</html>
