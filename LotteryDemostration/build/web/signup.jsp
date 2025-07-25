@@ -98,6 +98,10 @@
                     <td><input type="email" name="email" required></td>
                 </tr>
                 <tr>
+                    <td>Username: </td>
+                    <td><input type="text" name="username" required=""></td>
+                </tr>
+                <tr>
                     <td>Password:</td>
                     <td>
                         <input type="password" name="pswd" id="pswd" required minlength="8" onkeyup="checkStrength()">

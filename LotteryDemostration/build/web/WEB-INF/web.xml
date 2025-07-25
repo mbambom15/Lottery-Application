@@ -8,6 +8,30 @@
         <servlet-name>SignUpServlet</servlet-name>
         <servlet-class>za.ac.tut.controller.SignUpServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ForgotPasswordServlet</servlet-name>
+        <servlet-class>za.ac.tut.controller.ForgotPasswordServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>PlayGameServlet</servlet-name>
+        <servlet-class>za.ac.tut.controller.PlayGameServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>LogoutServlet</servlet-name>
+        <servlet-class>za.ac.tut.controller.LogoutServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>HistoryServlet</servlet-name>
+        <servlet-class>za.ac.tut.controller.HistoryServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DepositServlet</servlet-name>
+        <servlet-class>za.ac.tut.controller.DepositServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>WithdrawServlet</servlet-name>
+        <servlet-class>za.ac.tut.controller.WithdrawServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LoginServlet</servlet-name>
         <url-pattern>/LoginServlet</url-pattern>
@@ -15,5 +39,29 @@
     <servlet-mapping>
         <servlet-name>SignUpServlet</servlet-name>
         <url-pattern>/SignUpServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ForgotPasswordServlet</servlet-name>
+        <url-pattern>/ForgotPasswordServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>PlayGameServlet</servlet-name>
+        <url-pattern>/PlayGameServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LogoutServlet</servlet-name>
+        <url-pattern>/LogoutServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>HistoryServlet</servlet-name>
+        <url-pattern>/HistoryServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DepositServlet</servlet-name>
+        <url-pattern>/DepositServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>WithdrawServlet</servlet-name>
+        <url-pattern>/WithdrawServlet</url-pattern>
     </servlet-mapping>
 </web-app>

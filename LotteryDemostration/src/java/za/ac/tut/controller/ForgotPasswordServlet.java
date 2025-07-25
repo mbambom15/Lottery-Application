@@ -6,14 +6,13 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.HttpSession;
 import za.ac.tut.entities.UsernameTBL;
 import za.ac.tut.entities.bl.UsernameTBLFacadeLocal;
 
 import java.io.IOException;
 import java.util.List;
 
-public class LoginServlet extends HttpServlet {
+public class ForgotPasswordServlet extends HttpServlet {
 
     @EJB
     private UsernameTBLFacadeLocal usernameF;
@@ -21,30 +20,32 @@ public class LoginServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
         String email = request.getParameter("email");
-        String pswd = request.getParameter("pswd");
+        String newPassword = request.getParameter("pswd");
 
-        List<UsernameTBL> accounts = usernameF.findAll();
-        HttpSession session = request.getSession();
-
+        List<UsernameTBL> users = usernameF.findAll();
         boolean found = false;
 
-        for (UsernameTBL user : accounts) {
-            if (email.equals(user.getEmail()) && pswd.equals(user.getPassword())) {
-                session.setAttribute("user", user);
+        for (UsernameTBL user : users) {
+            if (user.getEmail().equalsIgnoreCase(email)) {
+                user.setPassword(newPassword);
+                usernameF.edit(user);
                 found = true;
-                break; // stop looping once match is found
+                break;
             }
         }
 
         if (found) {
-            RequestDispatcher disp = request.getRequestDispatcher("menu.jsp");
-            disp.forward(request, response);
-        } else {
-            request.setAttribute("error", "Invalid login credentials. Try again.");
+            request.setAttribute("message", "Password reset successful!");
+            request.setAttribute("msgType", "success");
             RequestDispatcher disp = request.getRequestDispatcher("login.jsp");
+        disp.forward(request, response);
+        } else {
+            request.setAttribute("message", "Email not found. Please try again.");
+            request.setAttribute("msgType", "error");
+            RequestDispatcher disp = request.getRequestDispatcher("forgotpassword.jsp");
             disp.forward(request, response);
         }
+
     }
 }
